@@ -59,6 +59,11 @@ async function getUserById(id) {
     return user
 }
 
+async function getTotalUserCount() {
+    const count = await User.count()
+    return count
+}
+
 module.exports = {
-    User, insertUser, getUserById, isUserExist
+    User, insertUser, getUserById, isUserExist, getTotalUserCount
 };

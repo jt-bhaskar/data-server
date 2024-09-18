@@ -1,6 +1,6 @@
 const Ajv = require('ajv');
 const {userExistSchema} = require("../data/network/model/user.schema");
-const {isUserExist} = require("../data/local/models/model.user");
+const {isUserExist, User, getTotalUserCount} = require("../data/local/models/model.user");
 const ajv = new Ajv();
 
 async function checkIfUserExist(req, res) {
@@ -32,7 +32,20 @@ async function checkIfUserExist(req, res) {
     }
 }
 
+async function getTotalUser(req, res) {
+    try {
+        const total_user = await getTotalUserCount()
+        return res.status(200).send({'status' : 'Success', total_user })
+    } catch (e) {
+        return res.status(500).json({
+            status: 'Error',
+            message: 'Unexpected Error',
+        });
+    }
+}
+
 
 module.exports = {
-    checkIfUserExist
+    checkIfUserExist,
+    getTotalUser
 }
