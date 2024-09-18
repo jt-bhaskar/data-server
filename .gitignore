@@ -1,0 +1,7 @@
+node_modules
+database
+data_server_deploy_improved.sh
+data_server.sqlite
+data_server_deploy.sh
+.idea
+checking.sh

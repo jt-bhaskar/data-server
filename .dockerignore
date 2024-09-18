@@ -1,0 +1,9 @@
+data_server.sqlite
+package-lock.json
+.idea
+.git
+*Dockerfile*
+*docker-compose*
+node_modules
+database
+ai_website_deploy.sh
