@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const {getCurrentISTTime} = require("../../utils/utils");
 
-const credentials = JSON.parse(fs.readFileSync(path.join(__dirname, 'google-sheets-service-account.json')));
+const credentials = JSON.parse(fs.readFileSync(path.join(__dirname, 'credentials.json')));
 
 const auth = new google.auth.GoogleAuth({
     credentials,

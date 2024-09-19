@@ -5,3 +5,4 @@ data_server.sqlite
 data_server_deploy.sh
 .idea
 checking.sh
+src/data/network/credentials.json

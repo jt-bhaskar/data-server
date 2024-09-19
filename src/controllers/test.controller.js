@@ -6,7 +6,6 @@ const {saveToSheet} = require("../data/network/google_sheets");
 const ajv = new Ajv();
 
 async function saveTestResult(req, res) {
-    console.log(`Result Submitted : ${req}`)
     const validate = ajv.compile(saveResultSchema)
     const valid = validate(req.body)
     try {
