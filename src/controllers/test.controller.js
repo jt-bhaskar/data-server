@@ -2,6 +2,7 @@ const Ajv = require('ajv');
 const {saveResultSchema} = require("../data/network/model/test.schema");
 const {insertUser} = require("../data/local/models/model.user");
 const {insertSubmission} = require("../data/local/models/model.result");
+const {saveToSheet} = require("../data/network/google_sheets");
 const ajv = new Ajv();
 
 async function saveTestResult(req, res) {
@@ -14,6 +15,11 @@ async function saveTestResult(req, res) {
             console.log(user.dataValues)
             const test_submission = await insertSubmission({submission: req.body.response, uid: user.uuid})
             console.log(test_submission)
+            try {
+                await saveToSheet(req.body)
+            } catch (e) {
+                console.log("ERROR: Unable to insert data in the sheet")
+            }
             return res.status(200).send({'status' : 'Success', 'id': user.dataValues.uuid})
         } else {
             return res.status(400).json({
