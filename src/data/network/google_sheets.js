@@ -11,7 +11,7 @@ const auth = new google.auth.GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/spreadsheets']
 });
 
-const SPREADSHEET_ID = '1gyaQGvCgGhSNLcbnBRwjLizzsK0hlEX-64CAKXV2AgQ';
+const SPREADSHEET_ID = '1ey46-QXDP6nPIN-z6Mz04UMK182wrdvEKc-c2Mbc000';
 const SHEET_NAME = 'Sheet1';
 
 async function saveToSheet(inputData) {
