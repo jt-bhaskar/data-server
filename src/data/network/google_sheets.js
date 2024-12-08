@@ -12,7 +12,7 @@ const auth = new google.auth.GoogleAuth({
 });
 
 const SPREADSHEET_ID = '1ey46-QXDP6nPIN-z6Mz04UMK182wrdvEKc-c2Mbc000';
-const SHEET_NAME = 'Sheet1';
+const SHEET_NAME = 'Sheet2';
 
 async function saveToSheet(inputData) {
     const authClient = await auth.getClient();
